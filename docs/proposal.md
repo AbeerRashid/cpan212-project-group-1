@@ -22,7 +22,60 @@ The MVP is designed around quick, structured meal entry rather than a full diet-
 - Progress tracker
 - Social media aspect. Can add friends and compare progress and meal plans, recipes etc.
 
+## 4. Data Model Draft
 
+The app uses three resources: `User`, `DailyLog`, and `MealEntry`.
+
+### User
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `_id` | string | Yes | Unique user identifier |
+| `email` | string | Yes | User's unique email address |
+| `passwordHash` | string | Yes | Hashed password; never returned to the client |
+| `createdAt` | Date | Yes | Date and time the account was created |
+| `updatedAt` | Date | Yes | Date and time the account was last updated |
+
+### DailyLog
+A daily log represents one user's calorie target and meals for one calendar date.
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `_id` | string | Yes | Unique daily log identifier |
+| `userId` | string | Yes | ID of the user who owns the log |
+| `date` | string | Yes | Calendar date in `YYYY-MM-DD` format |
+| `targetCalories` | number | Yes | User's calorie goal for the day |
+| `createdAt` | Date | Yes | Date and time the log was created |
+| `updatedAt` | Date | Yes | Date and time the log was last updated |
+
+The daily total is calculated from the meal entries rather than entered manually.
+
+The API response also includes these derived fields:
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `totalCaloriesConsumed` | number | Yes | Sum of the calculated calories from the day's meal entries |
+| `goalStatus` | string | Yes | Indicates whether the total is below, at, or above the calorie target |
+
+### MealEntry
+A meal entry represents one food item recorded for a meal in a daily log.
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `_id` | string | Yes | Unique meal entry identifier |
+| `dailyLogId` | string | Yes | ID of the daily log this meal belongs to |
+| `userId` | string | Yes | ID of the user who owns the meal entry |
+| `category` | string | Yes | `breakfast`, `lunch`, or `dinner` |
+| `foodName` | string | Yes | Food name returned by the USDA API |
+| `fdcId` | number | Yes | USDA FoodData Central food identifier |
+| `servings` | number | Yes | Number of servings consumed |
+| `servingSize` | number | Yes | Serving size returned by the USDA API |
+| `servingSizeUnit` | string | Yes | Unit for the serving size, such as `g` |
+| `caloriesPerServing` | number | Yes | Calories in one serving according to the USDA data |
+| `calculatedCalories` | number | Yes | Total calories for this meal entry |
+| `createdAt` | Date | Yes | Date and time the meal entry was created |
+| `updatedAt` | Date | Yes | Date and time the meal entry was last updated |
+
+`calculatedCalories` is calculated by the server using:
+`calculatedCalories` = `servings` × `caloriesPerServing`
 
 ## 7. Roles
 | Area | Lead | What the lead coordinates |
