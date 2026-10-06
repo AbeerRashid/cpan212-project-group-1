@@ -77,6 +77,23 @@ A meal entry represents one food item recorded for a meal in a daily log.
 `calculatedCalories` is calculated by the server using:
 `calculatedCalories` = `servings` × `caloriesPerServing`
 
+## 6. Wireframes
+
+- Navigation bar at the top of all pages 
+- Links to pages 
+- Homepage with title and Images 
+- Page with intake forms 
+    - Daily calorie target form 
+    - Meal entry forms with dropdown bars 
+    - Daily log 
+- Nutrition Information lookup page 
+    - Search function 
+    - Nutritional information 
+    - Food images 
+- About page 
+    - About the website 
+    - About the developers 
+
 ## 7. Roles
 | Area | Lead | What the lead coordinates |
 | --- | --- | --- |
