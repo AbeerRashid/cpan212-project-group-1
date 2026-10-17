@@ -1,6 +1,5 @@
 {
   "name": "cpan212-project-group-1",
-  "version": "1.00.00",
   "type": "module",
   "engines": {
     "node": ">=24.00.0"
@@ -11,5 +10,11 @@
   },
   "dependencies": {
     "express": "^5.0.0"
-  }
+  },
+  "version": "1.0.0",
+  "description": "API Backend - Milestone 2",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
