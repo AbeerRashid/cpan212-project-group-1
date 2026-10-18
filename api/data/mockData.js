@@ -1,4 +1,4 @@
-// Initial mock data arrays mirroring your DailyLog and MealEntry schemas
+// Initial mock data arrays mirroring our DailyLog and MealEntry schemas
 
 export let dailyLogs = [
     {
