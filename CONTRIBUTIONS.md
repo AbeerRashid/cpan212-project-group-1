@@ -16,5 +16,9 @@
 ### Maliki Cornwall-Douglas (MalikiC-D)
 No assigned tasks for M1 (joined the group late)
 
-⁠
-
+## M2 Express REST API
+### Abeer Rashid (AbeerRashid)
+**App Core & Routing:** Implemented `api/app.js`, setting up Express, middleware execution order, and mounting modular routers.
+- **Error Handling Architecture:** Built the custom `HttpError` class, the 404 fallback middleware (`notFound.js`), and the centralized global error handler (`errorHandler.js`).
+- **Routers & Controllers:** Developed modular route groups and controller functions for managing logs, nested meals, and USDA search queries.
+- **Pull Request:** [#9](link-to-pr)
