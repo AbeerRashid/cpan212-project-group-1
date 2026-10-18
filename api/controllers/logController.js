@@ -1,4 +1,4 @@
-import { dailyLogs } from "../data/mockData";
+import { dailyLogs } from "../data/mockData.js";
 
 // GET /api/logs - Retrieve all daily logs
 export function getAllLogs(req, res, next) {

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { searchFood } from "../controllers/usdaController";
+import { searchFood } from "../controllers/usdaController.js";
 
 const router = Router();
 

@@ -1,4 +1,4 @@
-import { dailyLogs } from "../data/mockData";
+import { dailyLogs } from "../data/mockData.js";
 
 // POST /api/logs/:logId/meals - Add a meal entry to a specific daily log
 export function addMealToLog(req, res){

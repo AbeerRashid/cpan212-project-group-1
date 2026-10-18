@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllLogs, getLogById, createLog } from "../controllers/logController";
+import { getAllLogs, getLogById, createLog, updateLog, deleteLog } from "../controllers/logController.js";
 import { validateLog } from '../middleware/validateLog.js';
 
 const router = Router();

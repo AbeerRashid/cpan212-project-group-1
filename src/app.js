@@ -1,9 +1,9 @@
 import express from 'express';
-import { notFound } from "../api/middleware/notFound";
-import { errorHandler } from "../api/middleware/errorHandler";
 import logRoutes from '../api/routes/logRoutes.js';
-import mealRoutes from '../api/routes/mealRoutes.js'
-import usdaRoutes from '../api/routes/usdaRoutes.js'
+import mealRoutes from '../api/routes/mealRoutes.js';
+import usdaRoutes from '../api/routes/usdaRoutes.js';
+import { notFound } from "../api/middleware/notFound.js";
+import { errorHandler } from "../api/middleware/errorHandler.js";
 
 export const app = express();
 
@@ -15,12 +15,18 @@ app.use(express.json());
 //the importing file can name the imported variable whatever it wants
 app.use('/api/logs', logRoutes);
 app.use('/api/logs', mealRoutes);
-app.use('/api/usda', usdaRoutes)
+app.use('/api/usda', usdaRoutes);
 
 // These two stay last: notFound catches anything no route matched,
 // errorHandler catches anything thrown along the way.
 
 // 3. 404 Not Found Middleware (Must go AFTER all valid routes)
-app.use(notFound)
+app.use(notFound);
 // 4. Global Error Handler (Must be the very last middleware)
-app.use(errorHandler)
+app.use(errorHandler);
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running live on port ${PORT}`);
+});

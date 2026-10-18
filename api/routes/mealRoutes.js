@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { addMealToLog } from "../controllers/mealController";
+import { addMealToLog } from "../controllers/mealController.js";
 
-const routes = Router();
+const router = Router();
 
 // POST /api/logs/:logId/meals
-Router.post('/:logId/meals', addMealToLog);
+router.post('/:logId/meals', addMealToLog);
 
-export default routes;
+export default router;

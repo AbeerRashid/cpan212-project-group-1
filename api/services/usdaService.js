@@ -1,4 +1,4 @@
-import { HttpError } from "../utils/http-error";
+import { HttpError } from "../utils/http-error.js";
 
 const USDA_API_KEY = process.env.USDA_API_KEY;
 const BASE_URL = "https://api.nal.usda.gov/fdc/v1/foods/search";

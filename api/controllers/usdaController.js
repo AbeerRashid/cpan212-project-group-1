@@ -1,4 +1,4 @@
-import { searchFoodFromUSDA } from "../services/usdaService";
+import { searchFoodFromUSDA } from "../services/usdaService.js";
 
 export async function searchFood(req, res, next) {
   try {
