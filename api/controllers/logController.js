@@ -64,7 +64,48 @@ export function createLog(req, res, next) {
     }
 }
 
+// PUT /api/logs/:id - Update an existing daily log
+export function updateLog(req, res){
+    const {id} = req.params;
+    const { date, totalCalories, meals} = req.body;
 
+    const log = dailyLogs.find(l => l._id === id);
+
+    if (!log) {
+        return res.status(404).json({
+            success: false,
+            message: `Daily log with ID ${id} not found`
+        });
+    }
+    if (date !== undefined) log.date = date;
+    if (totalCalories !== undefined) log.totalCalories = totalCalories;
+    if (meals !== undefined) log.meals = meals;
+
+    res.status(200).json({
+        success: true,
+        data: log
+    });
+}
+// DELETE /api/logs/:id - Delete a daily log
+export function deleteLog(req, res) {
+    const { id } = req.params;
+    const index = dailyLogs.findIndex(l => l._id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            success: false,
+            message: `Daily log with ID ${id} not found`
+        });
+    }
+
+    const deletedLog = dailyLogs.splice(index, 1)[0];
+
+    res.status(200).json({
+        success: true,
+        message: `Daily log with ID ${id} successfully deleted`,
+        data: deletedLog
+    });
+}
 
 /*
 ## 5. Endpoint List
