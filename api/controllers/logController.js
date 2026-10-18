@@ -81,8 +81,10 @@ GET | /api/meals/:id | Get details for a single meal entry | Success: 200 OK | E
 POST | /api/logs/:logId/meals | Create a new meal entry (calculates portion calories) | Success: 201 Created | Errors: 400, 401, 404, 500 |
 PUT | /api/meals/:id | Update a meal entry (recalculates portion calories) | Success: 200 OK | Errors: 400, 401, 404, 500 |
 DELETE | /api/meals/:id | Delete a meal entry from a daily log | Success: 200 OK | Errors: 401, 404, 500 |
-/*
 
-//https://www.youtube.com/watch?v=UuhnalzKwE0&t=14s
 
-// https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes
+https://www.youtube.com/watch?v=UuhnalzKwE0&t=14s
+
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes
+
+*/

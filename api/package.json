@@ -9,7 +9,8 @@
     "start": "node --env-file-if-exists=.env src/server.js"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "express": "^5.0.0",
+    "express-validator": "^7.3.2"
   },
   "version": "1.0.0",
   "description": "API Backend - Milestone 2",
