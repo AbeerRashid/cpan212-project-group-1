@@ -17,6 +17,9 @@ async function fetchFromUSDA(query) {
     );
   }
 
+  // FIXED: Constructs the full API URL with query parameters and environment credentials
+  const url = `${BASE_URL}?query=${encodeURIComponent(query)}&pageSize=10&api_key=${USDA_API_KEY}`;
+
   const res = await fetch(url, {
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
